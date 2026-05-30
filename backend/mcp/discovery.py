@@ -46,28 +46,24 @@ COMMON_MCP_SERVERS = {
         command="npx",
         args=["@playwright/mcp"],
         transport="stdio",
-        description="Browser automation via Playwright",
     ),
     "filesystem": MCPServerConfig(
         name="filesystem",
         command="npx",
         args=["@modelcontextprotocol/server-filesystem"],
         transport="stdio",
-        description="Filesystem operations",
     ),
     "github": MCPServerConfig(
         name="github",
         command="npx",
         args=["@modelcontextprotocol/server-github"],
         transport="stdio",
-        description="GitHub API integration",
     ),
     "git": MCPServerConfig(
         name="git",
         command="npx",
         args=["@modelcontextprotocol/server-git"],
         transport="stdio",
-        description="Git repository operations",
     ),
 }
 

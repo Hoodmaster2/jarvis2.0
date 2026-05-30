@@ -38,21 +38,29 @@ class ModelRegistry:
 
     async def refresh(self):
         try:
-            models = await self.ollama.list_models()
+            raw = await self.ollama.list_models()
             self._installed = {}
-            for m in models:
-                name = m.get("name", "")
+            for m in raw:
+                if isinstance(m, str):
+                    name = m
+                elif isinstance(m, dict):
+                    name = m.get("name", m.get("model", ""))
+                else:
+                    name = str(m)
                 base = name.split(":")[0]
                 profile = MODEL_PROFILES.get(base, {})
+                digest = (m.get("digest", "") if isinstance(m, dict) else "")[:12]
+                size = m.get("size", 0) if isinstance(m, dict) else 0
+                mod_at = m.get("modified_at", "") if isinstance(m, dict) else ""
                 self._installed[name] = {
                     "name": name,
                     "base": base,
                     "capabilities": profile.get("capabilities", ["chat"]),
                     "context": profile.get("context", 4096),
                     "type": profile.get("type", "general"),
-                    "digest": m.get("digest", "")[:12],
-                    "size": m.get("size", 0),
-                    "modified_at": m.get("modified_at", ""),
+                    "digest": digest,
+                    "size": size,
+                    "modified_at": mod_at,
                 }
             logger.info(f"Refreshed model registry: {len(self._installed)} models")
         except Exception as e:

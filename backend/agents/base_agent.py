@@ -50,9 +50,9 @@ class BaseAgent:
         self.skills = skills
         self.bus = message_bus
         self.router = model_router
+        self.session_id = str(uuid.uuid4())
         self.system_prompt = system_prompt or self._default_prompt()
         self.state = AgentState.IDLE
-        self.session_id = str(uuid.uuid4())
         self._current_task_id = None
         self._observations: list[dict] = []
         self._last_error = None
