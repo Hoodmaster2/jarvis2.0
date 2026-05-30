@@ -1,0 +1,26 @@
+{
+  "name": "screenshot_reader",
+  "version": "1.0.0",
+  "description": "Take and analyze screenshots. Can read text from screen captures.",
+  "author": "JARVIS",
+  "permissions": ["medium"],
+  "commands": [
+    {
+      "name": "capture",
+      "description": "Take a screenshot of the entire screen",
+      "parameters": {
+        "path": { "type": "string", "description": "Save path (optional)" }
+      }
+    },
+    {
+      "name": "capture_region",
+      "description": "Capture a specific region of the screen",
+      "parameters": {
+        "left": { "type": "number", "description": "Left coordinate" },
+        "top": { "type": "number", "description": "Top coordinate" },
+        "width": { "type": "number", "description": "Width in pixels" },
+        "height": { "type": "number", "description": "Height in pixels" }
+      }
+    }
+  ]
+}

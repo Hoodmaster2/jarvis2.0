@@ -1,0 +1,61 @@
+{
+  "name": "code_editor",
+  "version": "1.0.0",
+  "description": "Read, write, edit code files, run tests, and manage projects in a workspace.",
+  "author": "JARVIS",
+  "permissions": ["safe", "medium", "high"],
+  "commands": [
+    {
+      "name": "list_files",
+      "description": "List all files in a project directory",
+      "parameters": {
+        "path": { "type": "string", "description": "Project root path" }
+      },
+      "required": ["path"]
+    },
+    {
+      "name": "read_file",
+      "description": "Read a source code file",
+      "parameters": {
+        "path": { "type": "string", "description": "File path" }
+      },
+      "required": ["path"]
+    },
+    {
+      "name": "write_file",
+      "description": "Write content to a source code file",
+      "parameters": {
+        "path": { "type": "string", "description": "File path" },
+        "content": { "type": "string", "description": "File content" }
+      },
+      "required": ["path", "content"]
+    },
+    {
+      "name": "run_tests",
+      "description": "Run tests in the project",
+      "parameters": {
+        "path": { "type": "string", "description": "Project root path" },
+        "command": { "type": "string", "description": "Test command (e.g., pytest, npm test)" }
+      },
+      "required": ["path"]
+    },
+    {
+      "name": "run_command",
+      "description": "Run a development command (npm/pip etc.) - requires permission",
+      "parameters": {
+        "path": { "type": "string", "description": "Working directory" },
+        "command": { "type": "string", "description": "Command to run" }
+      },
+      "required": ["path", "command"],
+      "risk_level": "high"
+    },
+    {
+      "name": "analyze",
+      "description": "Analyze project structure and suggest improvements",
+      "parameters": {
+        "path": { "type": "string", "description": "Project root path" }
+      },
+      "required": ["path"]
+    }
+  ]
+}

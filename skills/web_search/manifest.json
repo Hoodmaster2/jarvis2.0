@@ -1,0 +1,26 @@
+{
+  "name": "web_search",
+  "version": "1.0.0",
+  "description": "Search the web using DuckDuckGo or other configured search APIs.",
+  "author": "JARVIS",
+  "permissions": ["safe"],
+  "commands": [
+    {
+      "name": "search",
+      "description": "Search the web for information",
+      "parameters": {
+        "query": { "type": "string", "description": "Search query" },
+        "num_results": { "type": "number", "description": "Number of results (default: 5)" }
+      },
+      "required": ["query"]
+    },
+    {
+      "name": "fetch_page",
+      "description": "Get the text content of a web page",
+      "parameters": {
+        "url": { "type": "string", "description": "URL to fetch" }
+      },
+      "required": ["url"]
+    }
+  ]
+}

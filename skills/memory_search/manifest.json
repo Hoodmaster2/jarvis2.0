@@ -1,0 +1,31 @@
+{
+  "name": "memory_search",
+  "version": "1.0.0",
+  "description": "Search and query JARVIS's long-term memory database.",
+  "author": "JARVIS",
+  "permissions": ["safe"],
+  "commands": [
+    {
+      "name": "query",
+      "description": "Search memories by text query",
+      "parameters": {
+        "query": { "type": "string", "description": "Search text" },
+        "type": { "type": "string", "description": "Filter by memory type (optional)" },
+        "limit": { "type": "number", "description": "Max results (default: 10)" }
+      },
+      "required": ["query"]
+    },
+    {
+      "name": "recent",
+      "description": "Get recent memories",
+      "parameters": {
+        "limit": { "type": "number", "description": "Number to fetch (default: 10)" }
+      }
+    },
+    {
+      "name": "preferences",
+      "description": "Get all saved user preferences",
+      "parameters": {}
+    }
+  ]
+}

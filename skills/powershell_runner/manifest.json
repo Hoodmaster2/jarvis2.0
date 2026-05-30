@@ -1,0 +1,28 @@
+{
+  "name": "powershell_runner",
+  "version": "1.0.0",
+  "description": "Execute PowerShell commands with user permission. Marked as HIGH risk.",
+  "author": "JARVIS",
+  "permissions": ["high"],
+  "commands": [
+    {
+      "name": "run",
+      "description": "Run a PowerShell command",
+      "parameters": {
+        "command": { "type": "string", "description": "PowerShell command to execute" },
+        "description": { "type": "string", "description": "Human-readable description of what this does" }
+      },
+      "required": ["command"],
+      "risk_level": "high"
+    },
+    {
+      "name": "run_script",
+      "description": "Run a PowerShell script file",
+      "parameters": {
+        "path": { "type": "string", "description": "Path to .ps1 script file" }
+      },
+      "required": ["path"],
+      "risk_level": "high"
+    }
+  ]
+}

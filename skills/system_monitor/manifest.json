@@ -1,0 +1,29 @@
+{
+  "name": "system_monitor",
+  "version": "1.0.0",
+  "description": "Monitor system resources: CPU, RAM, disk usage, and running processes.",
+  "author": "JARVIS",
+  "permissions": ["safe"],
+  "commands": [
+    {
+      "name": "get_cpu",
+      "description": "Get CPU usage percentage",
+      "parameters": {}
+    },
+    {
+      "name": "get_memory",
+      "description": "Get RAM usage statistics",
+      "parameters": {}
+    },
+    {
+      "name": "get_disk",
+      "description": "Get disk usage statistics",
+      "parameters": {}
+    },
+    {
+      "name": "get_all",
+      "description": "Get all system metrics at once",
+      "parameters": {}
+    }
+  ]
+}

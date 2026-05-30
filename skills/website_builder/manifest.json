@@ -1,0 +1,28 @@
+{
+  "name": "website_builder",
+  "version": "1.0.0",
+  "description": "Generate static websites and HTML pages based on user specifications.",
+  "author": "JARVIS",
+  "permissions": ["medium"],
+  "commands": [
+    {
+      "name": "generate_html",
+      "description": "Generate an HTML page from a description",
+      "parameters": {
+        "description": { "type": "string", "description": "Description of the page to create" },
+        "output_path": { "type": "string", "description": "Where to save the HTML file" }
+      },
+      "required": ["description", "output_path"]
+    },
+    {
+      "name": "create_site",
+      "description": "Create a multi-page static website",
+      "parameters": {
+        "project_name": { "type": "string", "description": "Name of the site/project" },
+        "output_dir": { "type": "string", "description": "Directory to create the site in" },
+        "pages": { "type": "array", "description": "List of page descriptions" }
+      },
+      "required": ["project_name", "output_dir"]
+    }
+  ]
+}

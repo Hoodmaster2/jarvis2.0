@@ -1,0 +1,17 @@
+{
+  "name": "jarvis",
+  "version": "1.0.0",
+  "description": "JARVIS - Private Local AI Assistant for Windows 10",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run electron\"",
+    "electron": "cd electron && npm start",
+    "backend": "cd backend && python main.py",
+    "frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd electron && npm install && cd ../frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

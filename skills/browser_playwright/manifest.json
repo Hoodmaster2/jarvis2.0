@@ -1,0 +1,54 @@
+{
+  "name": "browser_playwright",
+  "version": "1.0.0",
+  "description": "Web browser automation using Playwright. Navigate, click, fill forms, scrape, screenshot.",
+  "author": "JARVIS",
+  "permissions": ["safe", "medium", "high"],
+  "commands": [
+    {
+      "name": "navigate",
+      "description": "Open a URL in the browser",
+      "parameters": {
+        "url": { "type": "string", "description": "URL to navigate to" },
+        "headless": { "type": "boolean", "description": "Run headless (default: true)" }
+      },
+      "required": ["url"]
+    },
+    {
+      "name": "click",
+      "description": "Click an element on the page",
+      "parameters": {
+        "selector": { "type": "string", "description": "CSS selector to click" }
+      },
+      "required": ["selector"]
+    },
+    {
+      "name": "fill",
+      "description": "Fill a form field",
+      "parameters": {
+        "selector": { "type": "string", "description": "CSS selector" },
+        "value": { "type": "string", "description": "Value to type" }
+      },
+      "required": ["selector", "value"]
+    },
+    {
+      "name": "scrape",
+      "description": "Get visible text content from the page",
+      "parameters": {
+        "url": { "type": "string", "description": "URL to scrape (optional, uses current page if empty)" }
+      }
+    },
+    {
+      "name": "screenshot",
+      "description": "Take a screenshot of the current page",
+      "parameters": {
+        "path": { "type": "string", "description": "Save path for screenshot" }
+      }
+    },
+    {
+      "name": "get_html",
+      "description": "Get the full page HTML",
+      "parameters": {}
+    }
+  ]
+}

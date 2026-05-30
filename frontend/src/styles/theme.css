@@ -1,0 +1,22 @@
+/* Theme overrides - currently dark theme only */
+.theme-dark {
+  --bg-primary: #08080e;
+  --bg-secondary: #0d0d1a;
+  --bg-tertiary: #14142a;
+  --bg-card: #1a1a35;
+  --bg-hover: #222250;
+  --text-primary: #e0e0f0;
+  --text-secondary: #9090b0;
+  --text-muted: #606080;
+}
+
+.theme-light {
+  --bg-primary: #f5f5fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eeeef5;
+  --bg-card: #ffffff;
+  --bg-hover: #e8e8f0;
+  --text-primary: #1a1a2e;
+  --text-secondary: #606080;
+  --text-muted: #9090b0;
+}

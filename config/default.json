@@ -1,0 +1,57 @@
+{
+  "app": {
+    "name": "JARVIS",
+    "version": "1.0.0",
+    "start_with_windows": false,
+    "minimize_to_tray": true,
+    "theme": "dark"
+  },
+  "ollama": {
+    "host": "http://localhost:11434",
+    "model": "qwen3",
+    "embedding_model": "nomic-embed-text",
+    "temperature": 0.7,
+    "context_size": 8192,
+    "timeout": 120,
+    "num_predict": 2048
+  },
+  "voice": {
+    "wake_word": "jarvis",
+    "wake_word_enabled": false,
+    "stt_engine": "whisper",
+    "tts_engine": "piper",
+    "push_to_talk_key": "F4",
+    "mic_device": "default"
+  },
+  "memory": {
+    "enabled": true,
+    "path": "./data/memory.db",
+    "model": "nomic-embed-text",
+    "max_entries": 10000
+  },
+  "security": {
+    "mode": "ask",
+    "levels": {
+      "safe": ["read", "list", "search", "chat"],
+      "medium": ["create", "edit", "write_file", "read_clipboard", "write_clipboard"],
+      "high": ["shell", "install", "system_settings", "app_control"],
+      "critical": ["delete", "payments", "send_message", "network_modify"]
+    }
+  },
+  "network": {
+    "api_port": 8765,
+    "api_host": "127.0.0.1",
+    "cors_origins": ["http://localhost:5173", "http://localhost:3000"],
+    "external_apis": {
+      "search": { "enabled": false, "engine": "duckduckgo", "api_key": "" },
+      "weather": { "enabled": false, "api_key": "" },
+      "github": { "enabled": false, "token": "" }
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "./data/jarvis.log",
+    "max_size_mb": 50,
+    "backup_count": 3
+  }
+}

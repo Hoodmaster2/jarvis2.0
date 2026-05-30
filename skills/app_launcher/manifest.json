@@ -1,0 +1,30 @@
+{
+  "name": "app_launcher",
+  "version": "1.0.0",
+  "description": "Launch applications on Windows, list installed apps, and manage running processes.",
+  "author": "JARVIS",
+  "permissions": ["medium"],
+  "commands": [
+    {
+      "name": "launch",
+      "description": "Launch an application by name or path",
+      "parameters": {
+        "app": { "type": "string", "description": "Application name (e.g., notepad, chrome) or full path" }
+      },
+      "required": ["app"]
+    },
+    {
+      "name": "list_running",
+      "description": "List currently running processes",
+      "parameters": {}
+    },
+    {
+      "name": "find_app",
+      "description": "Find an installed application",
+      "parameters": {
+        "name": { "type": "string", "description": "Application name to search for" }
+      },
+      "required": ["name"]
+    }
+  ]
+}

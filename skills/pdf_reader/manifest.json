@@ -1,0 +1,25 @@
+{
+  "name": "pdf_reader",
+  "version": "1.0.0",
+  "description": "Read and extract text from PDF files.",
+  "author": "JARVIS",
+  "permissions": ["safe"],
+  "commands": [
+    {
+      "name": "read",
+      "description": "Extract text from a PDF file",
+      "parameters": {
+        "path": { "type": "string", "description": "Path to PDF file" }
+      },
+      "required": ["path"]
+    },
+    {
+      "name": "info",
+      "description": "Get metadata about a PDF file",
+      "parameters": {
+        "path": { "type": "string", "description": "Path to PDF file" }
+      },
+      "required": ["path"]
+    }
+  ]
+}
